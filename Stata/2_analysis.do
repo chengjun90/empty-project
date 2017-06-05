@@ -1,21 +1,32 @@
-// 学术论文
-// cheng
-// 2017年5月
-// 文件描述注释，包括程序的用途、输入和输出
+* --------------------------------------------------
+* 学术论文
+* cheng
+* 2017年5月1日
+* 文件描述注释，包括程序的用途、输入和输出
+* --------------------------------------------------
 
-cd C:\Users\cheng\Desktop\公告书与创新
+cd C:\Users\cheng\Desktop\rd
+clear all
 cls
 log close _all
+set more off
 log using "logs\cheng", name(innovation) smcl
 
-*****导入数据*****
+
+* --------------------------------------------------
+* 导入数据
+* --------------------------------------------------
 // 公司信息
 import excel "raw_data\公司信息\info.xlsx",firstrow clear  // 采用相对路径
+keep stkcd ind year age ///
+	roa tq rd
 
 // 持股信息
 
 
-*****回归分析*****
+* --------------------------------------------------
+* 回归分析
+* --------------------------------------------------
 local kz "x1 x2 x3"
 eststo clear
 foreach var of var financec1-financec6{
@@ -35,5 +46,5 @@ esttab using result.rtf, order() b(%4.3f) t(%6.3f) scalars(N r2_a F)title(Hypoth
 
 
 
-
+// Close the log, end the file
 log close innovation
