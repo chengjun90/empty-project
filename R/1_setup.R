@@ -30,6 +30,7 @@ print("ok")
 # 列示数据集
 list.files(path = "raw_data/财务指标",
            pattern = ".xlsx",
+           recursive = TRUE, 
            full.names = TRUE) %>% as_tibble()
 
 # 合并数据----
