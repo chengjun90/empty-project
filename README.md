@@ -1,7 +1,7 @@
 # Data Science Project Template
 Cheng Jun
 
-# Directory structure
+# Directory Structure
 - correctness 
 - reproducibility
 ```text
